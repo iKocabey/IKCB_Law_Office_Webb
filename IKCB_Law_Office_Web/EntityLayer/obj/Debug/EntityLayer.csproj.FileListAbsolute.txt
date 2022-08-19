@@ -1,0 +1,10 @@
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\bin\Debug\EntityLayer.dll
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\bin\Debug\EntityLayer.pdb
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\bin\Debug\Microsoft.Analytics.Interfaces.dll
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\bin\Debug\Microsoft.Analytics.Interfaces.Streaming.dll
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\bin\Debug\Microsoft.Analytics.Types.dll
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\obj\Debug\EntityLayer.csproj.AssemblyReference.cache
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\obj\Debug\EntityLayer.csproj.CoreCompileInputs.cache
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\obj\Debug\EntityLayer.csproj.CopyComplete
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\obj\Debug\EntityLayer.dll
+C:\Users\ismailKocabey\source\repos\IKCB_Law_Office_Web\EntityLayer\obj\Debug\EntityLayer.pdb

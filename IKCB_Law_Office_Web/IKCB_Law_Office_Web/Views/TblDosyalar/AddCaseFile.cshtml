@@ -1,0 +1,117 @@
+﻿@model EntityLayer.Concrete.tblDosyalar
+@{
+    ViewBag.Title = "AddCaseFile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<!-- Date picker plugins css -->
+
+<div class="container-fluid">
+    <!-- .row -->
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <h3 class="box-title m-b-0">Yeni Dava Dosyassı Ekle</h3>
+                <form class="form-group" method="post">
+                    <div class="form-group">
+                        <label class="col-md-12">Dosya Türü</label>
+                        <select class="form-control" name="dosyaTuru">
+                            <option>Dava Dosyası </option>
+                            <option>İcra Dosyası</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Dava Türü</label>
+                        <select class="form-control" name="davaVeyaTakipTuru">
+                            <option>İlamlı Takip</option>
+                            <option>İlamsız Takip</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">Mahkeme Türü</label>
+                        <select class="form-control" name="mahkemeTuruVeyaTakipYolu">
+                            <option>Ağır Ceza Mahkemesi</option>
+                            <option>Asliye Hukuk Mahkemesi</option>
+                            <option>Sulh Hukuk Mahkemesi</option>
+                            <option>Asliye Ceza Mahkemesi</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-12">Leyhde/Aleyhde</label>
+                        <select class="form-control" name="leyhdeAleyhde">
+                            <option>Leyhde</option>
+                            <option>Aleyhde</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Input Select</label>
+                        <select class="form-control" name="tarafimiz">
+                            <option>Davalı</option>
+                            <option>Davacı</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Klasör No</label>
+                        <input type="text" class="form-control" name="klasorNo">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Dosya No</label>
+                        <input type="text" class="form-control" name="dosyaNo">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Mahkemesi</label>
+                        <input type="text" class="form-control" name="mahkemesiVeyaDairesi">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Dava Konusu</label>
+                        <input type="text" class="form-control" name="davaVeyaIcraKonusu">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Dava Açma Tarihi</label>
+                        <input type="text" class="form-control" name="davaAcmaTarihi" placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">İş Kabul Tarihi</label>
+                        <input type="text" class="form-control" name="isKabulTarihi" placeholder="dd/mm/yyyy">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Esas</label>
+                        <input type="text" class="form-control" name="esas">
+                    </div>
+                    @*<div class="form-group">
+                        <label class="col-sm-12">Dosya Durum</label>
+                        <input type="text" class="form-control" name="dosyaDurum">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Dava Durum</label>
+                        <input type="text" class="form-control" name="davaDurum">
+                    </div>*@
+                    @*<div class="form-group">
+                        <label class="col-sm-12">Personel Adı</label>
+                        <input type="text" class="form-control" name="perId">
+                        <select class="form-control" name="tarafimiz">
+                            <option>Davalı</option>
+                            <option>Davacı</option>
+                        </select>
+                    </div>*@
+                    <div class="form-group">
+                        <label class="col-sm-12">muvekkil Adı</label>
+                        <input type="text" class="form-control" name="muvekkilId">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">Karşı Taraf Adı</label>
+                        <input type="text" class="form-control" name="karsiTarafId">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-block btn-outline btn-info">Dosyayı Oluştur</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- /.right-sidebar -->
+</div>
+<!-- /.container-fluid -->
+<footer class="footer text-center"> 2022 &copy; ALL RIGHTS RESERVED </footer>
+

@@ -1,0 +1,78 @@
+﻿@using EntityLayer.Concrete
+@model List<tblDosyalar>
+@{
+    ViewBag.Title = "GetFilesList";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>IKCB_Law_Office_Web_MyFiles</title>
+    
+</head>
+<body class="fix-sidebar">
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="white-box">
+                <div class="input-group custom-search-form">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
+                    </span>
+                </div>
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Dosya No</th>
+                                <th>Muvekkil Ad Soyad</th>
+                                <th>Karşı Taraf Ad Soyad</th>
+                                <th>Dosyayı Aç</th>
+                                <th>Dosyayı Güncelle</th>
+                                <th>Dosyayı Sil</th>
+                            </tr>
+                        </thead>
+                        @foreach (var item in Model)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>@item.dosyaId</td>
+                                    <td>@item.dosyaNo</td>
+                                    <td>@item.TblMuvekkiller.muvekkilAdSoyad</td>
+                                    <td>@item.TblKarsiTaraf.karsiTaradAdSoyad</td>
+                                    <td><a href="#" class="btn btn-block btn-outline btn-info">Aç </a></td>
+                                    <td><a href="/TblDosyalar/Updatefile/@item.dosyaId" class="btn btn-block btn-outline btn-primary">Güncelle</a></td>
+                                    <td><a href="/TblDosyalar/DeleteFile/@item.dosyaId" class="btn btn-block btn-outline btn-danger">sil</a></td>
+                                </tr>
+
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+    <!-- .right-sidebar -->
+    <!-- /.right-sidebar -->
+    <!-- /.container-fluid -->
+    <!-- /#page-wrapper -->
+    @*</div>*@
+    <!-- /#wrapper -->
+    <!-- jQuery -->
+    <!-- end - This is for export functionality only -->
+    <!--Style Switcher -->
+    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿@model EntityLayer.Concrete.tblDosyalar
+@{
+    Layout = null;
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h1>Yeni Dosya Ekleme Sayfası</h1>
+<br />
+@using (Html.BeginForm("AddFile", "TblDosyalar", FormMethod.Post))
+{
+    <div class="form-group">
+        <div class="form-group">
+            @Html.Label("Dosya Türü")
+            @Html.TextBoxFor(x => x.dosyaDurum, new { @class = "form-control" })
+        </div>
+        <br />
+        @Html.Label("Takip Türü")
+        @Html.TextBoxFor(x => x.davaVeyaTakipTuru, new { @class = "form-control", })
+
+        <br />
+        @Html.Label("Mahkeme Türü Türü")
+        @Html.TextBoxFor(x => x.mahkemeTuruVeyaTakipYolu)
+        <br />
+        @Html.Label("Dosya Türü Alt Kırılım")
+        @Html.TextBoxFor(x => x.mahkemeTuruAltKirilim)
+        <br />
+        @Html.Label("Leyhde/Aleyhde")
+        @Html.TextBoxFor(x => x.leyhdeAleyhde)
+        <br />
+        @Html.Label("Tarafımız")
+        @Html.TextBoxFor(x => x.tarafimiz)
+        <br />
+        @Html.Label("Klasör No")
+        @Html.TextBoxFor(x => x.klasorNo)
+        <br />
+        @Html.Label("Dosya No")
+        @Html.TextBoxFor(x => x.dosyaNo)
+        <br />
+        @Html.Label("Mahkkemesi")
+        @Html.TextBoxFor(x => x.mahkemesiVeyaDairesi)
+        <br />
+        @Html.Label("Dosya Konusu")
+        @Html.TextBoxFor(x => x.davaVeyaIcraKonusu)
+        <br />
+        @Html.Label("Dava Açma  Tarihi")
+        @Html.TextBoxFor(x => x.davaAcmaTarihi)
+        <br />
+        @Html.Label("İş Kabul Tarihi")
+        @Html.TextBoxFor(x => x.isKabulTarihi)
+        <br />
+        @Html.Label("Esas")
+        @Html.TextBoxFor(x => x.esas)
+        <br />
+        @Html.Label("Dava Durum")
+        @Html.TextBoxFor(x => x.dosyaDurum)
+        <br />
+        @Html.Label("Personel Adı")
+        @Html.TextBoxFor(x => x.perId)
+        <br />
+        @Html.Label("Muvekkil Adı")
+        @Html.TextBoxFor(x => x.muvekkilId)
+        <br />
+        @Html.Label("Karşı Taraf Adı")
+        @Html.TextBoxFor(x => x.karsiTarafId)
+        @Html.DropDownListFor(x => x.leyhdeAleyhde, new List<SelectListItem>
+                    { new SelectListItem { Text = "Leyhde", Value = "1" },
+                    new SelectListItem { Text = "Aleyhde", Value = "2" }
+                    });
+        <br />
+        <br />
+        <button>Kaydet</button>
+    </div>
+}

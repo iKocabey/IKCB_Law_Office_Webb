@@ -1,0 +1,70 @@
+﻿@model EntityLayer.Concrete.tblMessage
+@{
+    ViewBag.Title = "GetInBoxMessageDetails";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" sizes="16x16" href="../plugins/images/favicon.png">
+    <title>Elite Admin - is a responsive admin template</title>
+    <!-- Bootstrap Core CSS -->
+
+</head>
+<body class="fix-sidebar fix-header">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="cssload-speeding-wheel"></div>
+    </div>
+    <div id="wrapper">
+        <!-- Top Navigation -->
+
+        <div class="container-fluid">
+            <div class="row bg-title">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Mesaj Detayı</h4>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row">
+                <!-- Left sidebar -->
+                <div class="col-md-12">
+                    <div class="white-box">
+                        @Html.Action("GetInBoxMessageDetails", "Message",FormMethod.Get)
+                        {
+                        <div class="row">
+                            <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12 mail_listing">
+                                <div class="media m-b-30 p-t-20">
+                                    <h4 class="font-bold m-t-0">@Html.DisplayFor(x => x.Subject)</h4>
+                                    <hr>
+                                    <div class="media-body">
+                                        <span class="media-meta pull-right">@DateTime.Parse(Html.DisplayFor(x => x.MessageDate).ToString()).ToShortDateString()</span>
+                                        <h4 class="text-danger m-0">@Html.DisplayFor(x => x.SenderId)</h4>
+                                    </div>
+                                </div>
+                                <p>@Html.DisplayFor(x => x.MessageContent)</p>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+            <!-- .right-sidebar -->
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+

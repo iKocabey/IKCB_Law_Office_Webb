@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{416D63FD-0477-49AA-A954-A7C5B95A9B51};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C840857F-6E14-4748-8400-3F8DF4CE8D74}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAcceessLayer</RootNamespace>
+    <AssemblyName>DataAcceessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.Analytics.Interfaces" />
+    <Reference Include="Microsoft.Analytics.Interfaces.Streaming" />
+    <Reference Include="Microsoft.Analytics.Types" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IDosyalarDal.cs" />
+    <Compile Include="Abstract\IKarsiTarafDal.cs" />
+    <Compile Include="Abstract\IMessageDal.cs" />
+    <Compile Include="Abstract\IMuvekkillerDal.cs" />
+    <Compile Include="Abstract\IPersonelDal.cs" />
+    <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Concrete\Context.cs" />
+    <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="Concrete\Repositories\tblDosyalarRepository.cs" />
+    <Compile Include="EntityFramework\EfDosyalarDal.cs" />
+    <Compile Include="EntityFramework\EfKarsiTarafDal.cs" />
+    <Compile Include="EntityFramework\EfMessagesDal.cs" />
+    <Compile Include="EntityFramework\EfMuvekkilDal.cs" />
+    <Compile Include="EntityFramework\EfPersonelDal.cs" />
+    <Compile Include="Migrations\202208171310258_mig_update_tblDosyalar.cs" />
+    <Compile Include="Migrations\202208171310258_mig_update_tblDosyalar.designer.cs">
+      <DependentUpon>202208171310258_mig_update_tblDosyalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208171444234_mig_tblDosyalar_validation_update.cs" />
+    <Compile Include="Migrations\202208171444234_mig_tblDosyalar_validation_update.designer.cs">
+      <DependentUpon>202208171444234_mig_tblDosyalar_validation_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208171920384_mig_add_tblMessagess.cs" />
+    <Compile Include="Migrations\202208171920384_mig_add_tblMessagess.designer.cs">
+      <DependentUpon>202208171920384_mig_add_tblMessagess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208180825178_mig_update_tblMessage.cs" />
+    <Compile Include="Migrations\202208180825178_mig_update_tblMessage.designer.cs">
+      <DependentUpon>202208180825178_mig_update_tblMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208181120334_mig_add_tblMessages.cs" />
+    <Compile Include="Migrations\202208181120334_mig_add_tblMessages.designer.cs">
+      <DependentUpon>202208181120334_mig_add_tblMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208181426411_mig_update_message_table.cs" />
+    <Compile Include="Migrations\202208181426411_mig_update_message_table.designer.cs">
+      <DependentUpon>202208181426411_mig_update_message_table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208181432125_mig_update_messagessss.cs" />
+    <Compile Include="Migrations\202208181432125_mig_update_messagessss.designer.cs">
+      <DependentUpon>202208181432125_mig_update_messagessss.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
+      <Project>{ABD11920-DC10-4730-A9D9-D66EBE42F04C}</Project>
+      <Name>EntityLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202208171310258_mig_update_tblDosyalar.resx">
+      <DependentUpon>202208171310258_mig_update_tblDosyalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208171444234_mig_tblDosyalar_validation_update.resx">
+      <DependentUpon>202208171444234_mig_tblDosyalar_validation_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208171920384_mig_add_tblMessagess.resx">
+      <DependentUpon>202208171920384_mig_add_tblMessagess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208180825178_mig_update_tblMessage.resx">
+      <DependentUpon>202208180825178_mig_update_tblMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208181120334_mig_add_tblMessages.resx">
+      <DependentUpon>202208181120334_mig_add_tblMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208181426411_mig_update_message_table.resx">
+      <DependentUpon>202208181426411_mig_update_message_table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208181432125_mig_update_messagessss.resx">
+      <DependentUpon>202208181432125_mig_update_messagessss.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Bu proje bu bilgisayarda olmayan NuGet paketlerine başvuru yapıyor. Bunları indirmek için NuGet Paket Geri Yükleme'yi kullanın. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkID=322105. Eksik dosya: {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

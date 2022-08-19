@@ -1,0 +1,55 @@
+﻿@model EntityLayer.Concrete.tblDosyalar
+@{
+    ViewBag.Title = "UpdateFile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<br />
+@using (Html.BeginForm("UpdateFile", "TblDosyalar", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Id")
+    @Html.TextBoxFor(x => x.dosyaId, new { @class = "form-control" })
+    <br />
+    @Html.Label("Dosya Türü")
+    @Html.TextBoxFor(x => x.dosyaTuru, new { @class = "form-control" })
+    <br />
+    @Html.TextBoxFor(x => x.davaVeyaTakipTuru, new { @class = "form-control" })
+    <br />
+    @Html.Label("Mahkeme Türü")
+    @Html.TextBoxFor(x => x.mahkemeTuruVeyaTakipYolu, new { @class = "form-control" })
+    <br />
+    @Html.Label("Mahkeme Türü Alt Kırılım")
+    @Html.TextBoxFor(x => x.mahkemeTuruAltKirilim, new { @class = "form-control" })
+    <br />
+    @Html.Label("Leyhde/Aleyhde")
+    @Html.TextBoxFor(x => x.leyhdeAleyhde, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarafımız")
+    @Html.TextBoxFor(x => x.tarafimiz, new { @class = "form-control" })
+    <br />
+    @Html.Label("Klasör No")
+    @Html.TextBoxFor(x => x.klasorNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("Dosya No")
+    @Html.TextBoxFor(x => x.dosyaNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("Mahkemesi")
+    @Html.TextBoxFor(x => x.mahkemesiVeyaDairesi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Dava Konusu")
+    @Html.TextBoxFor(x => x.davaVeyaIcraKonusu, new { @class = "form-control" })
+    <br />
+    @Html.Label("Dava Açma Tarihi")
+    @Html.TextBoxFor(x => x.davaAcmaTarihi, new { @class = "form-control" })
+    <br />
+    @Html.Label("İş Kabul Tarihi")
+    @Html.TextBoxFor(x => x.isKabulTarihi, new { @class = "form-control" })
+    <br />
+    @Html.Label("Esas")
+    @Html.TextBoxFor(x => x.esas, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-block btn-outline btn-info">Güncelle</button>
+</div>
+
+}
+
